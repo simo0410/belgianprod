@@ -12,8 +12,21 @@
     <ul>
     {% for film in films %}
        <li>
-            <h2>{{ film.titre }} - {{ film.description }} - {{ film.categorie.nom }}</h2>
+            <h2>{{ film.titre }} - {{ film.description }} - {{ film.categorie.nom }} </h2>
         </li> 
-    {% endfor %}
+    
+        </ul>
+
+        <ul>
+            {% for acteur in film.acteurs %}
+                <li>
+                    <h2>{{ acteur.nom }} - {{ acteur.prenom }}</h2>
+                </li>
+            {% endfor %}
+        </ul>        
+
+    {% endfor %}    
     </ul>
 {% endblock %}
+
+ 
