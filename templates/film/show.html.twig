@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ film.titre }}{% endblock %}
+
+{%  block body %}
+
+    <h1>{{ film.titre }}</h1>
+
+    {% if film.description %}
+        <p>{{ film.description }}</p>
+    {% else %}
+        <p>Pas de description pour ce film.</p>
+    {% endif %}
+
+    <ul>
+        {% for acteur in film.acteurs %}
+            <li>{{ acteur.nom }} - {{ acteur.prenom }}</li>
+        {% else %}
+            <li>Aucun acteur</li>
+        {% endfor %}        
+    </ul>
+    
+    <p>Catégorie : {{ film.categorie.nom }}</p>
+
+    <a href="{{ path('app_film') }}">Retour à la liste</a>
+
+{% endblock %}    

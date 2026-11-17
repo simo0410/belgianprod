@@ -10,19 +10,30 @@
 
     <h1>Films BelgianProd</h1>
     <ul>
-    {% for film in films %}
-        <li>
-            <h2>{{ film.titre }}</h2> - {{ film.description }} - {{ film.categorie.nom }}
-            
-            <ul>
-                {% for acteur in film.acteurs %}
-                    <li>
-                        <h3>{{ acteur.nom }} - {{ acteur.prenom }}</h3>
-                    </li>
-                {% endfor %}
-            </ul>        
-        </li>
-    {% endfor %}    
+        {% for film in films %}
+            <li>
+                <h2>
+                    <a href="{{ path('app_film_show', {id: film.id}) }}">{{ film.titre }}</a>
+                </h2>
+
+                     - {{ film.description }} - {{ film.categorie.nom }}
+                
+                {# <ul>
+                    {% if film.acteurs is not empty %}
+
+                        {% for acteur in film.acteurs %}
+                            <li>
+                                <h3>{{ acteur.nom }} - {{ acteur.prenom }}</h3>
+                            </li>
+
+                        {% endfor %}
+
+                    {% else %}
+                        <li>Aucun acteur</li>    
+                    {% endif %}    
+                </ul>     #}    
+            </li>
+        {% endfor %}    
     </ul>
 {% endblock %}
 

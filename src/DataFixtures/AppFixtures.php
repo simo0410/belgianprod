@@ -70,6 +70,12 @@ class AppFixtures extends Fixture
         $film3->addActeur($acteur3);
         $manager->persist($film3);
 
+        $film4 = new Film();
+        $film4->setTitre('Test');
+        $film4->setCategorie($comedie);
+        
+        $manager->persist($film4);
+
 
         $manager->flush();                //4.tout envoyer en base  
     }
