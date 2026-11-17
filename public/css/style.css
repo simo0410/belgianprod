@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+nav a {
+    color: darkred;
+    font-weight: bold;
+}
