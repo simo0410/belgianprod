@@ -23,16 +23,16 @@
 
                 {#  version courte (opérateur ternaire) #}
                 {{ acteur.sexe == 'M' ? 'né' : 'née' }} le  
-                 {{ acteur.dateNaissance|date('d/m/Y') }}</li>
-                
-                 
-
+                 {{ acteur.dateNaissance|date('d/m/Y') }}
+            </li>
         {% else %}
             <li>Aucun acteur</li>
         {% endfor %}        
     </ul>
 
-    <p>Catégorie : {{ film.categorie.nom }}</p>
+    <p>Catégorie : 
+        <a href="{{ path('app_categorie_show', {id: film.categorie.id}) }}">{{ film.categorie.nom }}</a>
+    </p>
 
 
 

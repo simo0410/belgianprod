@@ -76,6 +76,14 @@ class AppFixtures extends Fixture
         
         $manager->persist($film4);
 
+        $film5 = new Film();
+        $film5->setTitre('Mission impossible');
+        $film5->setDescription('Un agent secret accepte une mission impossible.');
+        $film5->setCategorie($action);
+        $film5->addActeur($acteur1);
+        $manager->persist($film5);
+
+
 
         $manager->flush();                //4.tout envoyer en base  
     }
